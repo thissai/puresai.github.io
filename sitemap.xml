@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2025/07/07/cml2bk9um001vobmy7zi2eayk/</loc>
+    <loc>https://blog.puresai.com/2025/07/07/cml2bli2b001z0amy7s2v7ew9/</loc>
     
     <lastmod>2025-07-07</lastmod>
     
@@ -299,15 +299,6 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2019/11/20/Nginx9/</loc>
-    
-    <lastmod>2024-04-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/2019/11/22/Nginx6/</loc>
     
     <lastmod>2024-04-08</lastmod>
@@ -317,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2017/10/09/138/</loc>
+    <loc>https://blog.puresai.com/2019/11/20/Nginx9/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -335,7 +326,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2021/03/08/base/</loc>
+    <loc>https://blog.puresai.com/2017/10/09/138/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -344,7 +335,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2019/12/20/215/</loc>
+    <loc>https://blog.puresai.com/2020/03/22/230/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -362,6 +353,15 @@
   </url>
   
   <url>
+    <loc>https://blog.puresai.com/2021/03/08/base/</loc>
+    
+    <lastmod>2024-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.puresai.com/2022/06/23/403/</loc>
     
     <lastmod>2024-04-08</lastmod>
@@ -371,7 +371,25 @@
   </url>
   
   <url>
+    <loc>https://blog.puresai.com/2019/12/20/215/</loc>
+    
+    <lastmod>2024-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.puresai.com/2021/02/13/310/</loc>
+    
+    <lastmod>2024-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/2021/02/12/goexample1/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -398,15 +416,6 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2020/03/22/230/</loc>
-    
-    <lastmod>2024-04-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/2021/02/12/goexample3/</loc>
     
     <lastmod>2024-04-08</lastmod>
@@ -425,16 +434,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample1/</loc>
-    
-    <lastmod>2024-04-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample7/</loc>
+    <loc>https://blog.puresai.com/2021/02/12/goexample5/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -452,16 +452,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample6/</loc>
-    
-    <lastmod>2024-04-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample5/</loc>
+    <loc>https://blog.puresai.com/2021/02/12/goexample7/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -471,6 +462,15 @@
   
   <url>
     <loc>https://blog.puresai.com/2021/02/12/goexample9/</loc>
+    
+    <lastmod>2024-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/2021/02/12/goexample6/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -533,15 +533,6 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2021/11/30/382/</loc>
-    
-    <lastmod>2024-04-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/2021/11/21/381/</loc>
     
     <lastmod>2024-04-08</lastmod>
@@ -551,7 +542,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2018/12/30/175/</loc>
+    <loc>https://blog.puresai.com/2021/11/30/382/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -561,6 +552,15 @@
   
   <url>
     <loc>https://blog.puresai.com/2021/07/31/360/</loc>
+    
+    <lastmod>2024-04-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/2018/12/30/175/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -596,7 +596,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2019/03/29/181/</loc>
+    <loc>https://blog.puresai.com/2022/05/25/400/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -605,7 +605,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2022/05/25/400/</loc>
+    <loc>https://blog.puresai.com/2019/03/29/181/</loc>
     
     <lastmod>2024-04-08</lastmod>
     
@@ -1631,15 +1631,6 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2020/02/27/228/</loc>
-    
-    <lastmod>2022-03-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/2020/01/08/222/</loc>
     
     <lastmod>2022-03-19</lastmod>
@@ -1649,7 +1640,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2019/04/26/186/</loc>
+    <loc>https://blog.puresai.com/2020/02/27/228/</loc>
     
     <lastmod>2022-03-19</lastmod>
     
@@ -1659,6 +1650,15 @@
   
   <url>
     <loc>https://blog.puresai.com/2021/04/29/333/</loc>
+    
+    <lastmod>2022-03-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/2019/04/26/186/</loc>
     
     <lastmod>2022-03-19</lastmod>
     
@@ -1802,7 +1802,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2020/07/14/262/</loc>
+    <loc>https://blog.puresai.com/2020/04/25/246/</loc>
     
     <lastmod>2022-03-19</lastmod>
     
@@ -1811,7 +1811,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/2020/04/25/246/</loc>
+    <loc>https://blog.puresai.com/2020/07/14/262/</loc>
     
     <lastmod>2022-03-19</lastmod>
     
@@ -1856,7 +1856,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/category/index.html</loc>
+    <loc>https://blog.puresai.com/categories/index.html</loc>
     
     <lastmod>2022-03-19</lastmod>
     
@@ -1865,7 +1865,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/categories/index.html</loc>
+    <loc>https://blog.puresai.com/category/index.html</loc>
     
     <lastmod>2022-03-19</lastmod>
     
@@ -1890,13 +1890,6 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/Docker/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/tags/ElasticSearch/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -1905,6 +1898,13 @@
   
   <url>
     <loc>https://blog.puresai.com/tags/ElementUI/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/tags/Docker/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1925,6 +1925,13 @@
   </url>
   
   <url>
+    <loc>https://blog.puresai.com/tags/Linux/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.puresai.com/tags/Laravel/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -1939,21 +1946,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/Linux/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/tags/PHP/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.puresai.com/tags/SVN/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1981,7 +1974,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/sql/</loc>
+    <loc>https://blog.puresai.com/tags/SVN/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1989,6 +1982,13 @@
   
   <url>
     <loc>https://blog.puresai.com/tags/Nginx/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/tags/sql/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2016,14 +2016,14 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/ThinkPHP/</loc>
+    <loc>https://blog.puresai.com/tags/svn/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/svn/</loc>
+    <loc>https://blog.puresai.com/tags/ThinkPHP/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2038,13 +2038,6 @@
   
   <url>
     <loc>https://blog.puresai.com/tags/go/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.puresai.com/tags/vant/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2066,6 +2059,13 @@
   
   <url>
     <loc>https://blog.puresai.com/tags/boltdb/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/tags/vant/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2205,14 +2205,14 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/reading/</loc>
+    <loc>https://blog.puresai.com/tags/wrk/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/wrk/</loc>
+    <loc>https://blog.puresai.com/tags/reading/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2233,6 +2233,13 @@
   </url>
   
   <url>
+    <loc>https://blog.puresai.com/tags/shell/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.puresai.com/tags/MySQL/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -2247,7 +2254,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/shell/</loc>
+    <loc>https://blog.puresai.com/tags/jenkins/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2275,21 +2282,7 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/tags/jenkins/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/tags/gin/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.puresai.com/tags/web/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2304,6 +2297,13 @@
   
   <url>
     <loc>https://blog.puresai.com/tags/%E8%BE%BE%E8%BE%BE/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/tags/web/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2326,13 +2326,6 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/categories/Docker/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/categories/ElasticSearch/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -2341,6 +2334,13 @@
   
   <url>
     <loc>https://blog.puresai.com/categories/vue/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/categories/Docker/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2361,14 +2361,14 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/categories/PHP/</loc>
+    <loc>https://blog.puresai.com/categories/linux/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/categories/linux/</loc>
+    <loc>https://blog.puresai.com/categories/PHP/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2438,13 +2438,6 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/categories/vant/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.puresai.com/categories/gosourcecode/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -2453,6 +2446,13 @@
   
   <url>
     <loc>https://blog.puresai.com/categories/web/</loc>
+    <lastmod>2026-01-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.puresai.com/categories/vant/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -2543,14 +2543,14 @@
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/categories/reading/</loc>
+    <loc>https://blog.puresai.com/categories/test/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.puresai.com/categories/test/</loc>
+    <loc>https://blog.puresai.com/categories/reading/</loc>
     <lastmod>2026-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
