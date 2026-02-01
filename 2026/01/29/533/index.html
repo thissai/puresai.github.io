@@ -17,25 +17,25 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>puresai blog</title>
+  <title>服务器直传文件到slack - puresai blog</title>
 
   
-    <meta name="description" content="puresai blog，分享技术知识，不限于PHP、go、MySQL、Redis、linux、MQ、micro service。">
+    <meta name="description" content="slack api 完成服务器直传文件到slack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="puresai blog">
-<meta property="og:url" content="https://blog.puresai.com/2025/07/07/cml2bli2b001z0amy7s2v7ew9/index.html">
+<meta property="og:title" content="服务器直传文件到slack">
+<meta property="og:url" content="https://blog.puresai.com/2026/01/29/533/index.html">
 <meta property="og:site_name" content="puresai blog">
-<meta property="og:description" content="puresai blog，分享技术知识，不限于PHP、go、MySQL、Redis、linux、MQ、micro service。">
+<meta property="og:description" content="slack api 完成服务器直传文件到slack">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-07T01:52:39.000Z">
-<meta property="article:modified_time" content="2025-07-07T01:52:39.000Z">
+<meta property="article:published_time" content="2026-01-29T01:22:34.000Z">
+<meta property="article:modified_time" content="2026-02-01T01:43:47.187Z">
 <meta property="article:author" content="puresai">
-<meta property="article:tag" content="puresai,golang,Redis,Redis,Linux,MQ">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
   
   
   
-  <meta name="keywords" content="puresai,golang,Redis,Redis,Linux,MQ">
+  <meta name="keywords" content="Linux">
 
   <!-- feed -->
   
@@ -66,7 +66,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2026/01/24/532/"><span class="title">使用本地 SSH Key 实现服务器之间直接传输文件</span></a><a class="item title" href="/2025/10/12/528/"><span class="title">达达一周岁记</span></a><a class="item title" href="/2025/04/23/526/"><span class="title">查找一堆gz文件是否含有某些字符串</span></a><a class="item title" href="/2025/04/29/527/"><span class="title">如何挂载磁盘</span></a><a class="item title" href="/2024/11/24/520/"><span class="title">Python3虚拟环境venv</span></a><a class="item title" href="/2025/01/28/2024/"><span class="title">2024,这一年</span></a><a class="item title" href="/2020/01/24/2019/"><span class="title">2019,这一年</span></a><a class="item title" href="/2023/01/21/2022/"><span class="title">2022,这一年</span></a><a class="item title" href="/2018/02/13/2017/"><span class="title">2017,这一年</span></a><a class="item title" href="/2022/01/31/2021/"><span class="title">2021,这一年</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2026/01/29/533/"><span class="title">服务器直传文件到slack</span></a><a class="item title" href="/2026/01/24/532/"><span class="title">使用本地 SSH Key 实现服务器之间直接传输文件</span></a><a class="item title" href="/2025/10/12/528/"><span class="title">达达一周岁记</span></a><a class="item title" href="/2025/04/23/526/"><span class="title">查找一堆gz文件是否含有某些字符串</span></a><a class="item title" href="/2025/04/29/527/"><span class="title">如何挂载磁盘</span></a><a class="item title" href="/2024/11/24/520/"><span class="title">Python3虚拟环境venv</span></a><a class="item title" href="/2025/01/28/2024/"><span class="title">2024,这一年</span></a><a class="item title" href="/2020/01/24/2019/"><span class="title">2019,这一年</span></a><a class="item title" href="/2023/01/21/2022/"><span class="title">2022,这一年</span></a><a class="item title" href="/2018/02/13/2017/"><span class="title">2017,这一年</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -74,7 +74,93 @@
 
 
 
-<article class="md-text content">
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/Linux/">Linux</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2026-01-29T01:22:34.000Z">2026-01-29</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-02-01T01:43:47.187Z">2026-02-01</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>服务器直传文件到slack</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>最近一段时间经常有一些<strong>数据导出相关的工作</strong>，需要从服务器导出 CSV / Excel 等文<br>件给 Sales 同学查看，而 Sales 的日常沟通基本都在 <strong>Slack</strong> 上完成。</p>
+<p>如果采用传统方式：</p>
+<blockquote>
+<p>服务器 → 下载到本地 → 再上传到 Slack</p>
+</blockquote>
+<p>问题非常明显：</p>
+<ul>
+<li>文件稍微一大，下载 + 上传非常慢</li>
+<li>下午 4 点之后网速明显下降（可能放寒假了 🤷）</li>
+<li>严重依赖本地网络，效率不可控</li>
+<li>操作步骤多，不利于重复执行</li>
+</ul>
+<p>因此就产生了一个很自然的想法：</p>
+<blockquote>
+<p><strong>能不能让服务器直接把文件传到 Slack？</strong></p>
+</blockquote>
+<p>答案是：<strong>完全可以。</strong></p>
+<hr>
+<h2 id="一、整体思路"><a href="#一、整体思路" class="headerlink" title="一、整体思路"></a>一、整体思路</h2><p>核心思路很简单：</p>
+<ul>
+<li>文件本身就在服务器上</li>
+<li>Slack 提供了官方 API 用于文件上传</li>
+<li>在服务器上通过脚本，直接调用 Slack API 上传文件</li>
+</ul>
+<p>这样可以做到：</p>
+<ul>
+<li>文件 <strong>不经过本地</strong></li>
+<li>完全依赖服务器网络</li>
+<li>适合大文件、批量导出</li>
+<li>可脚本化、可自动化</li>
+</ul>
+<p>最终数据流变为：</p>
+<blockquote>
+<p>服务器 → Slack</p>
+</blockquote>
+<hr>
+<h2 id="二、创建-Slack-App"><a href="#二、创建-Slack-App" class="headerlink" title="二、创建 Slack App"></a>二、创建 Slack App</h2><p>首先需要一个 Slack App，用于获取上传文件所需的 Token。</p>
+<h3 id="1-新建-App"><a href="#1-新建-App" class="headerlink" title="1. 新建 App"></a>1. 新建 App</h3><p>访问：</p>
+<p><a target="_blank" rel="noopener" href="https://api.slack.com/apps">https://api.slack.com/apps</a></p>
+<p>点击 <strong>Create New App</strong>，选择你的 Workspace。</p>
+<hr>
+<h3 id="2-配置-OAuth-amp-Permissions"><a href="#2-配置-OAuth-amp-Permissions" class="headerlink" title="2. 配置 OAuth &amp; Permissions"></a>2. 配置 OAuth &amp; Permissions</h3><p>在 <strong>OAuth &amp; Permissions</strong> 中，添加以下常用权限（根据实际需要调整）：</p>
+<ul>
+<li><code>files:write</code></li>
+<li><code>chat:write</code></li>
+<li><code>channels:read</code>（如果需要）</li>
+</ul>
+<p>配置完成后，安装 App 到 Workspace，即可拿到：</p>
+<ul>
+<li><strong>Bot User OAuth Token</strong></li>
+<li>格式一般为：<code>xoxb-xxxx</code></li>
+</ul>
+<hr>
+<h2 id="三、服务器上传脚本"><a href="#三、服务器上传脚本" class="headerlink" title="三、服务器上传脚本"></a>三、服务器上传脚本</h2><p>下面是一个 <strong>可直接在服务器运行的 Python 脚本</strong>，用于：</p>
+<ul>
+<li>上传文件到指定 Slack Channel</li>
+<li>支持 Thread（可传消息链接）</li>
+<li>支持 @ 指定用户</li>
+<li>上传完成后输出文件链接</li>
+</ul>
+<h3 id="1-脚本代码"><a href="#1-脚本代码" class="headerlink" title="1. 脚本代码"></a>1. 脚本代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># file_uploader.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">from</span> slack_sdk <span class="keyword">import</span> WebClient</span><br><span class="line"><span class="keyword">import</span> config</span><br><span class="line"></span><br><span class="line">SLACK_TOKEN = config.slack_token</span><br><span class="line">DEFAULT_MENTION = <span class="string">&quot;xxxx&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------- utils ----------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">log</span>(<span class="params">msg: <span class="built_in">str</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;Print timestamped logs to stdout.&quot;&quot;&quot;</span></span><br><span class="line">    ts = time.strftime(<span class="string">&quot;%Y-%m-%d %H:%M:%S&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[<span class="subst">&#123;ts&#125;</span>] <span class="subst">&#123;msg&#125;</span>&quot;</span>, flush=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_thread_ts</span>(<span class="params">thread_link: <span class="built_in">str</span></span>) -&gt; <span class="built_in">str</span>:</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Convert a Slack message link to thread_ts.</span></span><br><span class="line"><span class="string">    Example:</span></span><br><span class="line"><span class="string">    https://workspace.slack.com/archives/xxxx/p1731398999934122</span></span><br><span class="line"><span class="string">    Returns:</span></span><br><span class="line"><span class="string">    1731398999.934122</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">match</span> = re.search(<span class="string">r&#x27;/p(\d&#123;16&#125;)&#x27;</span>, thread_link)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="keyword">match</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">f&quot;Invalid Slack message link: <span class="subst">&#123;thread_link&#125;</span>&quot;</span>)</span><br><span class="line">    ts_raw = <span class="keyword">match</span>.group(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;<span class="subst">&#123;ts_raw[:-<span class="number">6</span>]&#125;</span>.<span class="subst">&#123;ts_raw[-<span class="number">6</span>:]&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------- main ----------------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Usage: python file_uploader.py &lt;channel_id&gt; &lt;file_path&gt; [thread_link_or_ts] [user_ids...]&quot;</span>)</span><br><span class="line">        sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    channel_id = sys.argv[<span class="number">1</span>]</span><br><span class="line">    file_path = sys.argv[<span class="number">2</span>]</span><br><span class="line">    thread_input = sys.argv[<span class="number">3</span>] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &gt; <span class="number">3</span> <span class="keyword">else</span> <span class="literal">None</span></span><br><span class="line">    user_ids = sys.argv[<span class="number">4</span>:] <span class="keyword">if</span> <span class="built_in">len</span>(sys.argv) &gt; <span class="number">4</span> <span class="keyword">else</span> [DEFAULT_MENTION]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.isfile(file_path):</span><br><span class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">&quot;File not found&quot;</span>)</span><br><span class="line"></span><br><span class="line">    filename = os.path.basename(file_path)</span><br><span class="line">    file_size = os.path.getsize(file_path)</span><br><span class="line"></span><br><span class="line">    thread_ts = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">if</span> thread_input:</span><br><span class="line">        <span class="keyword">if</span> thread_input.startswith(<span class="string">&quot;http&quot;</span>):</span><br><span class="line">            thread_ts = parse_thread_ts(thread_input)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            thread_ts = thread_input</span><br><span class="line"></span><br><span class="line">    log(<span class="string">f&quot;Preparing to upload: <span class="subst">&#123;filename&#125;</span>&quot;</span>)</span><br><span class="line">    log(<span class="string">f&quot;File size: <span class="subst">&#123;file_size / <span class="number">1024</span> / <span class="number">1024</span>:<span class="number">.2</span>f&#125;</span> MB&quot;</span>)</span><br><span class="line"></span><br><span class="line">    client = WebClient(token=SLACK_TOKEN)</span><br><span class="line">    mentions = <span class="string">&quot; &quot;</span>.join(<span class="string">f&quot;&lt;@<span class="subst">&#123;uid&#125;</span>&gt;&quot;</span> <span class="keyword">for</span> uid <span class="keyword">in</span> user_ids)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(file_path, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        kwargs = &#123;</span><br><span class="line">            <span class="string">&quot;file&quot;</span>: f,</span><br><span class="line">            <span class="string">&quot;title&quot;</span>: filename,</span><br><span class="line">            <span class="string">&quot;channel&quot;</span>: channel_id,</span><br><span class="line">            <span class="string">&quot;initial_comment&quot;</span>: (</span><br><span class="line">                <span class="string">f&quot;✅ New file uploaded: *<span class="subst">&#123;filename&#125;</span>* &quot;</span></span><br><span class="line">                <span class="string">f&quot;(<span class="subst">&#123;file_size / <span class="number">1024</span> / <span class="number">1024</span>:<span class="number">.2</span>f&#125;</span> MB)\n<span class="subst">&#123;mentions&#125;</span>&quot;</span></span><br><span class="line">            ),</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> thread_ts:</span><br><span class="line">            kwargs[<span class="string">&quot;thread_ts&quot;</span>] = thread_ts</span><br><span class="line"></span><br><span class="line">        response = client.files_upload_v2(**kwargs)</span><br><span class="line"></span><br><span class="line">    file_info = response[<span class="string">&quot;file&quot;</span>]</span><br><span class="line">    log(<span class="string">&quot;✅ Upload completed successfully&quot;</span>)</span><br><span class="line">    log(<span class="string">f&quot;📎 File link: <span class="subst">&#123;file_info.get(<span class="string">&#x27;permalink&#x27;</span>)&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、运行方式"><a href="#四、运行方式" class="headerlink" title="四、运行方式"></a>四、运行方式</h2><p>基本用法</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python3 file_uploader.py &lt;channel_id&gt; &lt;file_path&gt;</span><br></pre></td></tr></table></figure>
+
+<p>上传到指定 Thread（推荐）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python3 file_uploader.py \</span><br><span class="line">  channel_id \</span><br><span class="line">  /data/sai.csv \</span><br><span class="line">  https://contactout.slack.com/archives/xxx/p1769005211787589</span><br></pre></td></tr></table></figure>
+
+<p>脚本会自动解析 Slack 消息链接，转换为 thread_ts。</p>
+<h2 id="五、效果说明"><a href="#五、效果说明" class="headerlink" title="五、效果说明"></a>五、效果说明</h2><p>文件直接从服务器上传到 Slack，不依赖本地网络，上传完成后，Sales 可立即在 Slack<br>中下载。</p>
+
 <div class="article-footer fs14">
     <section id="license">
       <div class="header"><span>许可协议</span></div>
@@ -85,14 +171,14 @@
     <section id="share">
       <div class="header"><span>分享文章</span></div>
       <div class="body">
-        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.puresai.com/2025/07/07/cml2bli2b001z0amy7s2v7ew9/" /></div>
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.puresai.com/2026/01/29/533/" /></div>
         <div class="social-wrap dis-select"><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
         
       </div>
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/10/12/528/">达达一周岁记</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/04/29/527/">如何挂载磁盘</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2026/01/24/532/">使用本地 SSH Key 实现服务器之间直接传输文件</a></div></section></div>
 
 
 
@@ -102,7 +188,14 @@
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">puresai</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%95%B4%E4%BD%93%E6%80%9D%E8%B7%AF"><span class="toc-text">一、整体思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA-Slack-App"><span class="toc-text">二、创建 Slack App</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%96%B0%E5%BB%BA-App"><span class="toc-text">1. 新建 App</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE-OAuth-amp-Permissions"><span class="toc-text">2. 配置 OAuth &amp; Permissions</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC"><span class="toc-text">三、服务器上传脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%84%9A%E6%9C%AC%E4%BB%A3%E7%A0%81"><span class="toc-text">1. 脚本代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E8%BF%90%E8%A1%8C%E6%96%B9%E5%BC%8F"><span class="toc-text">四、运行方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E6%95%88%E6%9E%9C%E8%AF%B4%E6%98%8E"><span class="toc-text">五、效果说明</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
