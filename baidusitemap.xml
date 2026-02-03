@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.puresai.com/2020/07/07/224/</loc>
+    <lastmod>2026-02-03</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.puresai.com/2021/03/08/base/</loc>
+    <lastmod>2026-02-02</lastmod>
+  </url>
+  <url>
     <loc>https://blog.puresai.com/2026/01/29/533/</loc>
     <lastmod>2026-02-01</lastmod>
   </url>
@@ -14,10 +22,6 @@
   </url>
   <url>
     <loc>https://blog.puresai.com/2025/04/23/526/</loc>
-    <lastmod>2025-07-07</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.puresai.com/2025/07/07/cml32xbnj001zj3myh9dfgwsf/</loc>
     <lastmod>2025-07-07</lastmod>
   </url>
   <url>
@@ -97,15 +101,11 @@
     <lastmod>2024-04-21</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2017/11/17/141/</loc>
-    <lastmod>2024-04-08</lastmod>
-  </url>
-  <url>
     <loc>https://blog.puresai.com/2021/08/15/362/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/10/30/376/</loc>
+    <loc>https://blog.puresai.com/2017/11/17/141/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -121,11 +121,7 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2019/11/22/Nginx1/</loc>
-    <lastmod>2024-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.puresai.com/2018/10/19/Nginx4/</loc>
+    <loc>https://blog.puresai.com/2021/10/30/376/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -133,11 +129,19 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2019/11/20/Nginx9/</loc>
+    <loc>https://blog.puresai.com/2019/11/22/Nginx1/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
     <loc>https://blog.puresai.com/2019/11/22/Nginx6/</loc>
+    <lastmod>2024-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.puresai.com/2019/11/20/Nginx9/</loc>
+    <lastmod>2024-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.puresai.com/2018/10/19/Nginx4/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -153,10 +157,6 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/03/08/base/</loc>
-    <lastmod>2024-04-08</lastmod>
-  </url>
-  <url>
     <loc>https://blog.puresai.com/2019/12/20/215/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
@@ -165,11 +165,11 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/02/13/310/</loc>
+    <loc>https://blog.puresai.com/2023/01/09/470/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2023/01/09/470/</loc>
+    <loc>https://blog.puresai.com/2021/02/13/310/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -181,19 +181,11 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample2/</loc>
-    <lastmod>2024-04-08</lastmod>
-  </url>
-  <url>
     <loc>https://blog.puresai.com/2021/02/12/goexample3/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample4/</loc>
-    <lastmod>2024-04-08</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample5/</loc>
+    <loc>https://blog.puresai.com/2021/02/12/goexample2/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -201,7 +193,11 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample7/</loc>
+    <loc>https://blog.puresai.com/2021/02/12/goexample5/</loc>
+    <lastmod>2024-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.puresai.com/2021/02/12/goexample4/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -209,11 +205,15 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/02/12/goexample9/</loc>
+    <loc>https://blog.puresai.com/2021/02/12/goexample7/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
     <loc>https://blog.puresai.com/2019/12/27/219/</loc>
+    <lastmod>2024-04-08</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.puresai.com/2021/02/12/goexample9/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -229,15 +229,11 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2022/08/11/431/</loc>
-    <lastmod>2024-04-08</lastmod>
-  </url>
-  <url>
     <loc>https://blog.puresai.com/2022/08/22/433/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/11/21/381/</loc>
+    <loc>https://blog.puresai.com/2022/08/11/431/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -245,15 +241,19 @@
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
+    <loc>https://blog.puresai.com/2021/11/21/381/</loc>
+    <lastmod>2024-04-08</lastmod>
+  </url>
+  <url>
     <loc>https://blog.puresai.com/2018/12/30/175/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/07/31/360/</loc>
+    <loc>https://blog.puresai.com/2020/02/22/phpframe14/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2020/02/22/phpframe14/</loc>
+    <loc>https://blog.puresai.com/2021/07/31/360/</loc>
     <lastmod>2024-04-08</lastmod>
   </url>
   <url>
@@ -713,11 +713,11 @@
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2020/02/27/228/</loc>
+    <loc>https://blog.puresai.com/2020/04/29/247/</loc>
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2020/04/29/247/</loc>
+    <loc>https://blog.puresai.com/2020/02/27/228/</loc>
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
@@ -741,11 +741,11 @@
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2016/10/11/76/</loc>
+    <loc>https://blog.puresai.com/2021/07/07/355/</loc>
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2021/07/07/355/</loc>
+    <loc>https://blog.puresai.com/2016/10/11/76/</loc>
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
@@ -805,11 +805,11 @@
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2016/04/06/38/</loc>
+    <loc>https://blog.puresai.com/2019/08/25/195/</loc>
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>
-    <loc>https://blog.puresai.com/2019/08/25/195/</loc>
+    <loc>https://blog.puresai.com/2016/04/06/38/</loc>
     <lastmod>2022-03-19</lastmod>
   </url>
   <url>

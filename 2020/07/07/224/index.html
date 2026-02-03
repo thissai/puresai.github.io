@@ -17,25 +17,26 @@
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
   
-  <title>puresai blog</title>
+  <title>Laravel限流Redis throttle - puresai blog</title>
 
   
-    <meta name="description" content="puresai blog，分享技术知识，不限于PHP、go、MySQL、Redis、linux、MQ、micro service。">
+    <meta name="description" content="Laravel限流Redis throttle">
 <meta property="og:type" content="article">
-<meta property="og:title" content="puresai blog">
-<meta property="og:url" content="https://blog.puresai.com/2025/07/07/cml32xbnj001zj3myh9dfgwsf/index.html">
+<meta property="og:title" content="Laravel限流Redis throttle">
+<meta property="og:url" content="https://blog.puresai.com/2020/07/07/224/index.html">
 <meta property="og:site_name" content="puresai blog">
-<meta property="og:description" content="puresai blog，分享技术知识，不限于PHP、go、MySQL、Redis、linux、MQ、micro service。">
+<meta property="og:description" content="Laravel限流Redis throttle">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2025-07-07T01:52:39.000Z">
-<meta property="article:modified_time" content="2025-07-07T01:52:39.000Z">
+<meta property="article:published_time" content="2020-07-07T10:47:58.000Z">
+<meta property="article:modified_time" content="2026-02-03T03:40:18.056Z">
 <meta property="article:author" content="puresai">
-<meta property="article:tag" content="puresai,golang,Redis,Redis,Linux,MQ">
+<meta property="article:tag" content="Laravel">
+<meta property="article:tag" content="jwt">
 <meta name="twitter:card" content="summary">
   
   
   
-  <meta name="keywords" content="puresai,golang,Redis,Redis,Linux,MQ">
+  <meta name="keywords" content="Laravel,Laravel throttle,ratelimit">
 
   <!-- feed -->
   
@@ -66,7 +67,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2026/01/29/533/"><span class="title">服务器直传文件到slack</span></a><a class="item title" href="/2026/01/24/532/"><span class="title">使用本地 SSH Key 实现服务器之间直接传输文件</span></a><a class="item title" href="/2025/10/12/528/"><span class="title">达达一周岁记</span></a><a class="item title" href="/2025/04/23/526/"><span class="title">查找一堆gz文件是否含有某些字符串</span></a><a class="item title" href="/2025/04/29/527/"><span class="title">如何挂载磁盘</span></a><a class="item title" href="/2024/11/24/520/"><span class="title">Python3虚拟环境venv</span></a><a class="item title" href="/2025/01/28/2024/"><span class="title">2024,这一年</span></a><a class="item title" href="/2020/01/24/2019/"><span class="title">2019,这一年</span></a><a class="item title" href="/2023/01/21/2022/"><span class="title">2022,这一年</span></a><a class="item title" href="/2018/02/13/2017/"><span class="title">2017,这一年</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2020/07/07/224/"><span class="title">Laravel限流Redis throttle</span></a><a class="item title" href="/2021/03/08/base/"><span class="title">Redis基础类型、常用知识</span></a><a class="item title" href="/2026/01/29/533/"><span class="title">服务器直传文件到slack</span></a><a class="item title" href="/2026/01/24/532/"><span class="title">使用本地 SSH Key 实现服务器之间直接传输文件</span></a><a class="item title" href="/2025/10/12/528/"><span class="title">达达一周岁记</span></a><a class="item title" href="/2025/04/23/526/"><span class="title">查找一堆gz文件是否含有某些字符串</span></a><a class="item title" href="/2025/04/29/527/"><span class="title">如何挂载磁盘</span></a><a class="item title" href="/2024/11/24/520/"><span class="title">Python3虚拟环境venv</span></a><a class="item title" href="/2025/01/28/2024/"><span class="title">2024,这一年</span></a><a class="item title" href="/2020/01/24/2019/"><span class="title">2019,这一年</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -74,7 +75,64 @@
 
 
 
-<article class="md-text content">
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/PHP/">PHP</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2020-07-07T10:47:58.000Z">2020-07-07</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2026-02-03T03:40:18.056Z">2026-02-03</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Laravel限流Redis throttle</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>在 Laravel 11 中，<code>Redis::throttle</code> 是一个强大的工具，用于实现对 API 或特定操作<br>的速率限制。通过使用 Redis 作为后端存储，<code>Redis::throttle</code> 可以有效地控制用户在<br>一定时间内可以执行的请求次数。本文将介绍如何使用 <code>Redis::throttle</code>，其主要方法、<br>注意事项，并与 <code>RateLimiter</code> 进行对比。</p>
+<h2 id="1-Redis-throttle-的基本使用"><a href="#1-Redis-throttle-的基本使用" class="headerlink" title="1. Redis::throttle 的基本使用"></a>1. Redis::throttle 的基本使用</h2><p><code>Redis::throttle</code> 是 Laravel 提供的一个基于 Redis 的速率限制工具。它允许你轻松地<br>限制某个操作在特定时间内的执行次数。</p>
+<h3 id="1-1-基本语法"><a href="#1-1-基本语法" class="headerlink" title="1.1 基本语法"></a>1.1 基本语法</h3><figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Redis</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Redis</span>::<span class="title function_ invoke__">throttle</span>(<span class="string">&#x27;key&#x27;</span>)-&gt;<span class="title function_ invoke__">allow</span>(<span class="number">10</span>)-&gt;<span class="title function_ invoke__">every</span>(<span class="number">60</span>)-&gt;<span class="title function_ invoke__">then</span>(function () &#123;</span><br><span class="line">    <span class="comment">// 正常执行操作</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 超过速率限制时的回调</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>key</code>: 用于标识速率限制的唯一键。</li>
+<li><code>allow(10)</code>: 在指定的时间窗口内允许的最大请求次数。</li>
+<li><code>every(60)</code>: 时间窗口的长度（以秒为单位）。</li>
+<li><code>then</code>: 当请求未超过限制时执行的回调。</li>
+<li>第二个回调函数是可选的，用于处理超过限制时的逻辑。</li>
+</ul>
+<h3 id="1-2-示例"><a href="#1-2-示例" class="headerlink" title="1.2 示例"></a>1.2 示例</h3><p>假设你希望限制用户每分钟只能发送 5 条消息：</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">Redis</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Redis</span>::<span class="title function_ invoke__">throttle</span>(<span class="string">&#x27;send-message:&#x27;</span> . <span class="variable">$user</span>-&gt;id)-&gt;<span class="title function_ invoke__">allow</span>(<span class="number">5</span>)-&gt;<span class="title function_ invoke__">every</span>(<span class="number">60</span>)-&gt;<span class="title function_ invoke__">then</span>(function () <span class="keyword">use</span> ($<span class="title">user</span>) &#123;</span><br><span class="line">    // 发送消息的逻辑</span><br><span class="line">    $<span class="title">this</span>-&gt;<span class="title">sendMessage</span>($<span class="title">user</span>, $<span class="title">message</span>);</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 超过限制时的处理</span></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_ invoke__">response</span>(<span class="string">&#x27;Too many attempts. Please try again later.&#x27;</span>, <span class="number">429</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，<code>send-message:</code> 加上用户 ID 作为键，确保每个用户的速率限制是独立的<br>。</p>
+<h2 id="2-主要方法"><a href="#2-主要方法" class="headerlink" title="2. 主要方法"></a>2. 主要方法</h2><h3 id="2-1-allow-int-maxAttempts"><a href="#2-1-allow-int-maxAttempts" class="headerlink" title="2.1 allow(int $maxAttempts)"></a>2.1 <code>allow(int $maxAttempts)</code></h3><p>设置在一定时间窗口内允许的最大请求次数。</p>
+<h3 id="2-2-every-int-decaySeconds"><a href="#2-2-every-int-decaySeconds" class="headerlink" title="2.2 every(int $decaySeconds)"></a>2.2 <code>every(int $decaySeconds)</code></h3><p>设置时间窗口的长度（以秒为单位）。</p>
+<h3 id="2-3-then-callable-callback-callable-failureCallback-null"><a href="#2-3-then-callable-callback-callable-failureCallback-null" class="headerlink" title="2.3 then(callable $callback, callable $failureCallback = null)"></a>2.3 <code>then(callable $callback, callable $failureCallback = null)</code></h3><ul>
+<li><code>$callback</code>: 当请求未超过限制时执行的回调。</li>
+<li><code>$failureCallback</code>: 当请求超过限制时执行的回调（可选）。</li>
+</ul>
+<h3 id="2-4-block-int-timeout"><a href="#2-4-block-int-timeout" class="headerlink" title="2.4 block(int $timeout)"></a>2.4 <code>block(int $timeout)</code></h3><p>设置当请求超过限制时，阻塞用户的时间（以秒为单位）。在这段时间内，用户无法再次发<br>起请求。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="title class_">Redis</span>::<span class="title function_ invoke__">throttle</span>(<span class="string">&#x27;key&#x27;</span>)-&gt;<span class="title function_ invoke__">allow</span>(<span class="number">10</span>)-&gt;<span class="title function_ invoke__">every</span>(<span class="number">60</span>)-&gt;<span class="title function_ invoke__">block</span>(<span class="number">10</span>)-&gt;<span class="title function_ invoke__">then</span>(function () &#123;</span><br><span class="line">    <span class="comment">// 正常执行操作</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 超过速率限制时的回调</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，如果用户超过了速率限制，他们将被阻塞 10 秒。</p>
+<h2 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3. 注意事项"></a>3. 注意事项</h2><h3 id="3-1-Redis-连接"><a href="#3-1-Redis-连接" class="headerlink" title="3.1 Redis 连接"></a>3.1 Redis 连接</h3><p>确保你的 Laravel 应用已经正确配置了 Redis 连接。你可以在 <code>.env</code> 文件中设置<br><code>REDIS_HOST</code>、<code>REDIS_PASSWORD</code> 等参数。</p>
+<h3 id="3-2-键的唯一性"><a href="#3-2-键的唯一性" class="headerlink" title="3.2 键的唯一性"></a>3.2 键的唯一性</h3><p><code>Redis::throttle</code> 的键必须是唯一的，通常你会使用用户 ID、IP 地址或其他唯一标识符<br>来构造键。</p>
+<h3 id="3-3-阻塞时间"><a href="#3-3-阻塞时间" class="headerlink" title="3.3 阻塞时间"></a>3.3 阻塞时间</h3><p>使用 <code>block</code> 方法时，确保设置的阻塞时间合理，避免用户长时间无法操作。</p>
+<h3 id="3-4-分布式环境"><a href="#3-4-分布式环境" class="headerlink" title="3.4 分布式环境"></a>3.4 分布式环境</h3><p>在分布式环境中，<code>Redis::throttle</code> 可以很好地工作，因为 Redis 是一个集中式的存储<br>系统。确保所有服务器都连接到同一个 Redis 实例。</p>
+<h2 id="4-与-RateLimiter-的对比"><a href="#4-与-RateLimiter-的对比" class="headerlink" title="4. 与 RateLimiter 的对比"></a>4. 与 RateLimiter 的对比</h2><p>Laravel 还提供了 <code>RateLimiter</code> 工具，它与 <code>Redis::throttle</code> 类似，但有一些区别：</p>
+<h3 id="4-1-配置方式"><a href="#4-1-配置方式" class="headerlink" title="4.1 配置方式"></a>4.1 配置方式</h3><p><code>RateLimiter</code> 通常在 <code>app/Providers/RouteServiceProvider.php</code> 中配置，而<br><code>Redis::throttle</code> 可以在代码中直接使用。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Cache</span>\<span class="title">RateLimiting</span>\<span class="title">Limit</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Support</span>\<span class="title">Facades</span>\<span class="title">RateLimiter</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">RateLimiter</span>::<span class="keyword">for</span>(<span class="string">&#x27;api&#x27;</span>, <span class="function"><span class="keyword">function</span> (<span class="params"><span class="variable">$request</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title class_">Limit</span>::<span class="title function_ invoke__">perMinute</span>(<span class="number">60</span>)-&gt;<span class="title function_ invoke__">by</span>(<span class="variable">$request</span>-&gt;<span class="title function_ invoke__">user</span>()?-&gt;id ?: <span class="variable">$request</span>-&gt;<span class="title function_ invoke__">ip</span>());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-灵活性"><a href="#4-2-灵活性" class="headerlink" title="4.2 灵活性"></a>4.2 灵活性</h3><p><code>Redis::throttle</code> 更加灵活，可以在任何地方使用，而 <code>RateLimiter</code> 通常用于路由中<br>间件中。</p>
+<h3 id="4-3-使用场景"><a href="#4-3-使用场景" class="headerlink" title="4.3 使用场景"></a>4.3 使用场景</h3><ul>
+<li><code>Redis::throttle</code> 更适合在代码中直接控制速率限制，例如在服务类或控制器中。一般<br>是分钟级别。</li>
+<li><code>RateLimiter</code> 更适合在全局范围内对路由进行速率限制。秒级。</li>
+</ul>
+<h3 id="4-4-性能"><a href="#4-4-性能" class="headerlink" title="4.4 性能"></a>4.4 性能</h3><p>两者都基于 Redis，性能差异不大。选择使用哪个工具主要取决于你的使用场景和偏好。</p>
+<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h2><p><code>Redis::throttle</code> 是 Laravel 中一个非常实用的速率限制工具，特别适合在代码中直接<br>控制操作的执行频率。通过合理使用 <code>allow</code>、<code>every</code> 和 <code>block</code> 方法，你可以轻松实<br>现对用户请求的限制。与 <code>RateLimiter</code> 相比，<code>Redis::throttle</code> 更加灵活，适合在特<br>定场景下使用。</p>
+<p>在实际开发中，根据需求选择合适的工具，可以有效提升应用的稳定性和用户体验。</p>
+
 <div class="article-footer fs14">
     <section id="license">
       <div class="header"><span>许可协议</span></div>
@@ -85,14 +143,14 @@
     <section id="share">
       <div class="header"><span>分享文章</span></div>
       <div class="body">
-        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.puresai.com/2025/07/07/cml32xbnj001zj3myh9dfgwsf/" /></div>
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="https://blog.puresai.com/2020/07/07/224/" /></div>
         <div class="social-wrap dis-select"><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy"  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/8411ed322ced6.svg" /></a></div>
         
       </div>
     </section>
     </div>
 </article>
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/10/12/528/">达达一周岁记</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/04/29/527/">如何挂载磁盘</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2020/07/14/262/">使用vue-element-admin的一些总结</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2020/05/04/250/">利用ElementUI的table和calendar制作一个价格日历</a></div></section></div>
 
 
 
@@ -102,7 +160,14 @@
 <footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">puresai</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.29.1">Stellar 1.29.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
-</aside><div class='float-panel blur'>
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Redis-throttle-%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="toc-text">1. Redis::throttle 的基本使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-text">1.1 基本语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E7%A4%BA%E4%BE%8B"><span class="toc-text">1.2 示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95"><span class="toc-text">2. 主要方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-allow-int-maxAttempts"><span class="toc-text">2.1 allow(int $maxAttempts)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-every-int-decaySeconds"><span class="toc-text">2.2 every(int $decaySeconds)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-then-callable-callback-callable-failureCallback-null"><span class="toc-text">2.3 then(callable $callback, callable $failureCallback &#x3D; null)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-block-int-timeout"><span class="toc-text">2.4 block(int $timeout)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">3. 注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-Redis-%E8%BF%9E%E6%8E%A5"><span class="toc-text">3.1 Redis 连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E9%94%AE%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7"><span class="toc-text">3.2 键的唯一性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E9%98%BB%E5%A1%9E%E6%97%B6%E9%97%B4"><span class="toc-text">3.3 阻塞时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%88%86%E5%B8%83%E5%BC%8F%E7%8E%AF%E5%A2%83"><span class="toc-text">3.4 分布式环境</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%B8%8E-RateLimiter-%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-text">4. 与 RateLimiter 的对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="toc-text">4.1 配置方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E7%81%B5%E6%B4%BB%E6%80%A7"><span class="toc-text">4.2 灵活性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">4.3 使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E6%80%A7%E8%83%BD"><span class="toc-text">4.4 性能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93"><span class="toc-text">5. 总结</span></a></li></ol></div><div class="widget-footer">
+
+<a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c0-4.714 0-7.071 1.464-8.536C4.93 2 7.286 2 12 2c4.714 0 7.071 0 8.535 1.464C22 4.93 22 7.286 22 12c0 4.714 0 7.071-1.465 8.535C19.072 22 16.714 22 12 22s-7.071 0-8.536-1.465C2 19.072 2 16.714 2 12Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/></g></svg><span>回到顶部</span></a></div></widget>
+</div></aside><div class='float-panel blur'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
   </button>
